@@ -1,5 +1,6 @@
 {
-  "name": "surveyjs_react_quickstart_new",
+  "name": "surveyjs_react",
+  "author":"Ryma Nait",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

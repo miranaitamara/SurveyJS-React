@@ -3,7 +3,7 @@ import * as Survey from "survey-react";
 import "survey-react/survey.css";
 import SurveyCreator from "./SurveyCreator";
 import logo from "./logo.svg";
-import "./App.css";
+//import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 
 import "jquery-ui/themes/base/all.css";
@@ -61,15 +61,15 @@ widgets.bootstrapslider(SurveyCore);
 
 class App extends Component {
   json = {
-    title: "Product Feedback Survey Example",
-    showProgressBar: "top",
+    //title: "Product Feedback Survey Example",
+    showProgressBar: "bottom",
     pages: [
       {
         elements: [
           {
             type: "myquestion",
-            name: "cq1",
-            text: "Some Text"
+            name: "My text ",
+            text: "question evaluation"
           },
           {
             type: "tagbox",
@@ -342,28 +342,27 @@ class App extends Component {
     var model = new Survey.Model(this.json);
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React with SurveyJS</h2>
-        </div>
+       
         <div className="surveyjs">
           {/*If you do not want to show survey, comment the lines below*/}
-          <h1>SurveyJS library in action:</h1>
+          <h1>Survey Test:</h1>
+<div textAlign="center" align="center" >
+          <h3>Image export:</h3>
+          <button onClick={() => this.savePDF(model)}>Save Image</button>
+          </div>
+         <br/>
+         <br/>
+          
           <Survey.Survey
             model={model}
             onComplete={this.onComplete}
             onValueChanged={this.onValueChanged}
           />
           {/*If you do not want to show save PDF button, comment the lines below*/}
-          <h3>SurveyPDF export:</h3>
-          <button onClick={() => this.savePDF(model)}>Save PDF</button>
-          {/*If you do not want to show Survey Creator, comment the lines below*/}
-          <h1>SurveyJS Creator in action:</h1>
-          <SurveyCreator />
+          
+         
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        
       </div>
     );
   }
